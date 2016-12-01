@@ -52,6 +52,7 @@
                 android:textSize="30sp"
                 android:maxLength="15"
                 android:inputType="none"
+                android:padding="5dp"
                 />
 
             <EditText
@@ -63,7 +64,9 @@
                 android:paddingLeft="10dp"
                 android:textSize="30sp"
                 android:inputType="numberPassword"
-                android:maxLength="15"/>
+                android:maxLength="15"
+                android:padding="5dp"
+                />
 
             <Button
                 android:id="@+id/btn_lg"

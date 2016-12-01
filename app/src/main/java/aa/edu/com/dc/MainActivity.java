@@ -18,6 +18,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 
 public class MainActivity extends Activity {
     EditText etUsername;
@@ -30,10 +33,42 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         etUsername = (EditText) findViewById(R.id.et_username);
         etPassword= (EditText) findViewById(R.id.et_password);
-        Button btnLogin = (Button) findViewById(R.id.btn_login);
-        btnLogin.setOnClickListener(listener);
+      //  Button btnLogin = (Button) findViewById(R.id.btn_login);
+    //    btnLogin.setOnClickListener(listener);
         requestQueue = Volley.newRequestQueue(this);
+        ButterKnife.bind(this);
     }
+    @OnClick(R.id.btn_login)
+    public void sss(){
+        String username = etUsername.getText().toString();
+        String password = etPassword.getText().toString();
+        String path = url + "?category=user&name="+username+"&paw="+password;
+
+        JsonObjectRequest request = new JsonObjectRequest(path, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    String rs = response.getString("rt");
+                    String remessage = response.getString("rtmsg");
+                    if("200".equals(rs)){
+                        Toast.makeText(MainActivity.this,"登陆成功",Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(MainActivity.this,remessage,Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MainActivity.this,"访问异常",Toast.LENGTH_SHORT).show();
+            }
+        });
+        requestQueue.add(request);
+    }
+
     private View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
