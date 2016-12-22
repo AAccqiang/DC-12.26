@@ -1,4 +1,4 @@
-package aa.edu.com.dc;
+package aa.edu.com.dc.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -15,10 +15,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import aa.edu.com.dc.bean.Password;
+import aa.edu.com.dc.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -56,11 +55,17 @@ public class AlterActivity extends Activity {
             final String confirmPassword = et_ComfirmPassword.getText().toString();
             String path = "http://10.0.1.13:8080/users/user";
 
-        if(oldPassword == null || oldPassword.equals("")){
+        if(oldPassword == null || oldPassword.equals("") ){
             Toast.makeText(this, "修改失败,原密码为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
+
+
+        if(newPassword == null || newPassword.equals("") ){
+            Toast.makeText(this, "修改失败,新密码为空", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         if(oldPassword.equals(newPassword)){
             Toast.makeText(this, "修改失败,密码相同", Toast.LENGTH_SHORT).show();

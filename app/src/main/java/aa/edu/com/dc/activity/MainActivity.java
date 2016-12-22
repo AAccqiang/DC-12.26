@@ -1,10 +1,9 @@
-package aa.edu.com.dc;
+package aa.edu.com.dc.activity;
 
 import android.app.Activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import aa.edu.com.dc.R;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 

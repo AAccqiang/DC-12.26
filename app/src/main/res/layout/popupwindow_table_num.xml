@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_n2"
+        style="@style/table_num"
+        android:text="102"
+        />
+    <Button
+        android:id="@+id/btn_n3"
+        style="@style/table_num"
+        android:text="103"
+        />
+    <Button
+        android:id="@+id/btn_n4"
+        style="@style/table_num"
+        android:text="104"
+        />
+    <Button
+        android:id="@+id/btn_n5"
+        style="@style/table_num"
+        android:text="201"
+        />
+    <Button
+        android:id="@+id/btn_n6"
+        style="@style/table_num"
+        android:text="202"
+        />
+    <Button
+        android:id="@+id/btn_n7"
+        style="@style/table_num"
+        android:text="203"
+
+        />
+
+    <Button
+        android:id="@+id/btn_n8"
+        style="@style/table_num"
+        android:text="301"
+        />
+    <Button
+        android:id="@+id/btn_n9"
+        style="@style/table_num"
+        android:text="302"
+        />
+
+</LinearLayout>

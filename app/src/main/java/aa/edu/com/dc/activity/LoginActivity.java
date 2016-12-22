@@ -1,16 +1,12 @@
-package aa.edu.com.dc;
+package aa.edu.com.dc.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -22,6 +18,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import aa.edu.com.dc.R;
 import aa.edu.com.dc.utils.HttpManage;
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/tv_fm_menuImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/hotdishes1"/>
+
+        <TextView
+            android:id="@+id/tv_fm_menuName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="麻婆豆腐"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:textColor="#ffff0000"
+            android:layout_marginRight="20dp"/>
+        <TextView
+            android:id="@+id/tv_fm_menuPirce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11.0"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="菜品介绍"/>
+
+        <TextView
+            android:id="@+id/tv_fm_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="柠檬薏米水是款美白养颜的健康饮料，特别受年轻女士的喜爱，薏米有清热利尿、去水肿、排毒的功效"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="客户评价"/>
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleY="0.4"
+            android:scaleX="0.4"
+
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
