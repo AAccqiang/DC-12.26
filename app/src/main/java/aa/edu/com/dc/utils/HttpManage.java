@@ -19,7 +19,6 @@ public class HttpManage {
         }
         return false;
 
-
     }
 
 }

@@ -97,6 +97,7 @@
 
         <ExpandableListView
             android:id="@+id/edListView"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"></ExpandableListView>
 

@@ -209,9 +209,8 @@ public class ChoosedishActivity extends FragmentActivity {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
 
-                Log.e("qwe",i1+"");
-
-                return false;
+                Toast.makeText(ChoosedishActivity.this, "点击了", Toast.LENGTH_SHORT).show();
+                return true;
             }
         });
     }
