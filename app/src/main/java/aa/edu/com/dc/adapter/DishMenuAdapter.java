@@ -97,4 +97,14 @@ public class DishMenuAdapter extends BaseExpandableListAdapter {
     public boolean isChildSelectable(int i, int i1) {
         return true;
     }
+//
+//    public interface OnItemData{
+//        void onItemClick(View view);
+//    }
+//
+//    private OnItemData onItemData;
+//
+//    public void setOnItemData(OnItemData onItemData){
+//        this.onItemData = onItemData;
+//    }
 }

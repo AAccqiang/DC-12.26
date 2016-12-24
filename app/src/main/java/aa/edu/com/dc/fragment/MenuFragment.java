@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 
 public class MenuFragment extends Fragment {
 
-    @BindView(R.id.tv_fm_menuImg)
+    @BindView(R.id.iv_fm_menuImg)
     ImageView imageView;
 
     @BindView(R.id.tv_fm_menuName)
@@ -38,6 +38,8 @@ public class MenuFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fish,container,false);
         ButterKnife.bind(this,view);
         return view;
-
     }
+
+
+
 }

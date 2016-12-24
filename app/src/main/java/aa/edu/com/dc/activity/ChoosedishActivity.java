@@ -3,6 +3,7 @@ package aa.edu.com.dc.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,16 +12,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import aa.edu.com.dc.DB.DBmanager;
+import aa.edu.com.dc.HttpApi.RetrofitClient;
+import aa.edu.com.dc.HttpApi.UrlUtil;
 import aa.edu.com.dc.R;
 import aa.edu.com.dc.adapter.DishMenuAdapter;
 import aa.edu.com.dc.bean.Dish;
@@ -28,6 +36,9 @@ import aa.edu.com.dc.bean.TableBean;
 import aa.edu.com.dc.utils.SharedPreferUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Administrator on 2016/12/14 0014.
@@ -42,6 +53,13 @@ public class ChoosedishActivity extends FragmentActivity {
 
     private ExpandableListView expandableListView;
     private DishMenuAdapter adapter;
+
+    @BindView(R.id.iv_fm_menuImg)ImageView ivMenu;
+    @BindView(R.id.tv_fm_menuName)TextView tvMenu;
+    @BindView(R.id.tv_fm_menuPirce)TextView tvPirce;
+    @BindView(R.id.tv_fm_introduction)TextView tvtroduction;
+
+    private RetrofitClient retrofitClient;
 
 //adsa
     @Override
@@ -204,12 +222,29 @@ public class ChoosedishActivity extends FragmentActivity {
         }
     }
 
+    /*
+    @BindView(R.id.iv_fm_menuImg)ImageView ivMenu;
+    @BindView(R.id.tv_fm_menuName)TextView tvMenu;
+    @BindView(R.id.tv_fm_menuPirce)TextView tvPirce;
+    @BindView(R.id.tv_fm_introduction)TextView tvtroduction;
+     */
+
     private void itemOnTouch(){
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                String tvFmMenu =  childredDish.get(i).get(i1).getDishName();
+                String tvFmPirce =  childredDish.get(i).get(i1).getPrice();
+                String ivFmMenu =  childredDish.get(i).get(i1).getImgPath();
+                String tvFmIntroduction =  childredDish.get(i).get(i1).getIntroduction();
 
-                Toast.makeText(ChoosedishActivity.this, "点击了", Toast.LENGTH_SHORT).show();
+                String path = UrlUtil.BASE + ivFmMenu;
+                Picasso.with(ChoosedishActivity.this).load(path).into(ivMenu);
+
+                tvMenu.setText(tvFmMenu);
+                tvPirce.setText(tvFmPirce);
+                tvtroduction.setText(tvFmIntroduction);
+
                 return true;
             }
         });
